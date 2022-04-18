@@ -23,6 +23,10 @@ dependencies {
     implementation fileTree(dir: 'lib/example', include: ['*/*.jar'])
 }
 
+compileJava {
+    dependsOn(':jpf-core:buildJars')
+}
+
 jar {
     archiveBaseName = 'jpf-nhandler'
     exclude('example/**')   
