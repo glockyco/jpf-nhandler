@@ -8,8 +8,10 @@ repositories {
 }
 
 dependencies {
-    // jpf-core
-    implementation files(jpf.Jar.getFullPath())
+    ant.importBuild 'build-properties.xml'
+
+    // jpf-core + jars used in the examples
+    implementation files(ant.properties['jpf-core.native_classpath'].split(';'))
 
     // JUnit 4
     testImplementation 'junit:junit:4.12'

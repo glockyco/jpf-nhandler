@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+
+<project name="jpf-nhandler" basedir=".">
+
+  <!-- this is where we get the 'jpf.core' location from -->
+  <property file="../site.properties"/>
+
+  <!-- if there is no site.properties in the parent dir, default to home dir -->
+  <property file="${user.home}/.jpf/site.properties"/>
+
+  <!-- if there is no site.properties in the home dir, default to peer dir -->
+  <property name="jpf-core" value = "../jpf-core"/>
+
+  <!-- get the jpf-core path properties -->
+  <property file="${jpf-core}/jpf.properties"/>
+
+</project>
